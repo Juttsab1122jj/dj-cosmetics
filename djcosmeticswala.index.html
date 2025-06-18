@@ -1,0 +1,215 @@
+<!-- Full updated HTML with pop-up preview, animation effects, and newsletter subscription added -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJ Cosmetics Wala</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --primary-color: #f8c5d0;
+      --secondary-color: #000;
+      --accent-color: #ffffff;
+      --card-bg: #1a1a1a;
+      --font-primary: 'Poppins', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font-primary);
+      background-color: var(--secondary-color);
+      color: var(--accent-color);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    .animate {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-in-out;
+    }
+    .animate.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    header, section, footer {
+      transition: all 0.5s ease;
+    }
+    .newsletter {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .newsletter input[type=email] {
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      margin-right: 10px;
+      width: 250px;
+    }
+    .newsletter button {
+      padding: 12px 20px;
+      background: var(--primary-color);
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .popup-content {
+      background: #fff;
+      color: #000;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+    }
+    .popup-content h3 {
+      color: #000;
+    }
+    .popup-content p {
+      margin-top: 10px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER + NAV stays unchanged -->
+  <header class="animate">
+    <h1>DJ Cosmetics Wala</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#shop">Shop</a>
+      <a href="#blog">Tips</a>
+      <a href="#contact">Contact</a>
+      <a href="#privacy">Privacy</a>
+    </nav>
+  </header>
+
+  <section class="hero animate" id="home">
+    <h2>Glow Different. Feel Beautiful.</h2>
+    <p>Premium beauty & skincare for every shade and skin type.</p>
+  </section>
+
+  <section class="section animate" id="about">
+    <h2>About Us</h2>
+    <p>Welcome to <strong>DJ Cosmetics Wala</strong>, where beauty meets trust. Founded with love and passion, we believe every woman deserves to glow confidently using natural, safe, and effective products.</p>
+  </section>
+
+  <section class="section animate" id="shop">
+    <h2>Our Products</h2>
+    <div class="products">
+      <div class="product" onclick="showPopup('Rose Glow Serum', 'Hydrates and brightens your skin. $19.99')">
+        <h3>Rose Glow Serum</h3><p>$19.99</p>
+      </div>
+      <div class="product" onclick="showPopup('24K Gold Facial Oil', 'Premium anti-aging oil with gold flakes. $29.99')">
+        <h3>24K Gold Facial Oil</h3><p>$29.99</p>
+      </div>
+      <div class="product" onclick="showPopup('Velvet Matte Lipstick', 'Smooth long-lasting color. $9.99')">
+        <h3>Velvet Matte Lipstick</h3><p>$9.99</p>
+      </div>
+      <div class="product" onclick="showPopup('Herbal Hair Mask', 'Strengthens hair and reduces fall. $14.99')">
+        <h3>Herbal Hair Mask</h3><p>$14.99</p>
+      </div>
+    </div>
+    <div class="whatsapp-order">
+      <a href="https://wa.me/855765018104" target="_blank">Order via WhatsApp</a>
+    </div>
+  </section>
+
+  <section class="section animate newsletter">
+    <h2>Subscribe to our Newsletter</h2>
+    <p>Stay updated on new products and offers</p>
+    <form>
+      <input type="email" placeholder="Your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <section class="section animate" id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Cambodia / Pakistan<br>📞 +855 765018104<br>✉️ djcosmeticswala@gmail.com</p>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section class="section instagram-feed animate">
+    <h2>Follow Us on Instagram</h2>
+    <iframe src="https://www.instagram.com/djcosmeticswala/embed" allowtransparency="true"></iframe>
+  </section>
+
+  <section class="section animate" id="privacy">
+    <h2>Privacy Policy</h2>
+    <p>We collect basic info to fulfill orders and improve service. We never share your data. Read full privacy <a href="https://djcosmeticswala.com/privacy-policy" target="_blank">here</a>.</p>
+  </section>
+
+  <div class="floating-btns">
+    <a href="https://wa.me/855765018104" title="Chat on WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://t.me/yourbotlink" title="Telegram Chat" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+    <a href="#contact" title="Contact"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <div class="popup" id="productPopup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h3 id="popupTitle">Product Title</h3>
+      <p id="popupDescription">Product Description</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 DJ Cosmetics Wala. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function showPopup(title, desc) {
+      document.getElementById('popupTitle').innerText = title;
+      document.getElementById('popupDescription').innerText = desc;
+      document.getElementById('productPopup').style.display = 'flex';
+    }
+    function closePopup() {
+      document.getElementById('productPopup').style.display = 'none';
+    }
+    // Animation reveal on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
